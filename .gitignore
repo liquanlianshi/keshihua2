@@ -1,0 +1,11 @@
+node_modules/
+.pw-browsers/
+.npm-cache/
+package.json
+package-lock.json
+shot.js
+shots.js
+el.js
+shots/
+*.png
+.DS_Store

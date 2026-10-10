@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>智能跃迁 · 人工智能作为新质生产力 | 数据可视化报告</title>
+<meta name="description" content="用 30+ 组可视化图表解析人工智能如何重塑劳动者、劳动资料与劳动对象，成为新质生产力的核心引擎。">
+<meta name="theme-color" content="#0B0910">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/viz.css">
+</head>
+<body>
+
+<!-- ═══════════════ 页边装饰（印刷图录的制版记号） ═══════════════ -->
+<div class="edge-band" data-tone="1" aria-hidden="true"></div>
+<span class="edge-label" aria-hidden="true">智能跃迁 · 人工智能作为新质生产力</span>
+<div class="regmark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- ═══════════════ 背景色晕 ═══════════════ -->
+<div class="bg-field" aria-hidden="true">
+  <div class="bg-field__mesh"></div>
+  <div class="bg-field__grid"></div>
+</div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ═══════════════ 载入页 ═══════════════ -->
+<div class="boot" id="boot">
+  <div class="boot__inner">
+    <div class="boot__mark">智能跃迁</div>
+    <div class="boot__bar"><i id="bootBar"></i></div>
+    <div class="row row--sb">
+      <span class="boot__pct">LOADING ASSETS</span>
+      <span class="boot__pct" id="bootPct">000</span>
+    </div>
+    <p class="boot__hint t-micro">正在装载 33 组可视化 · 数据源已本地内置</p>
+  </div>
+</div>
+
+<!-- ═══════════════ 顶部 ═══════════════ -->
+<div class="topline"><i id="topProgress"></i></div>
+
+<header class="topbar" id="topbar">
+  <a class="brand" href="#ch-00">
+    <span class="brand__dot" aria-hidden="true">智</span>
+    <span class="brand__name">智能跃迁</span>
+    <span class="brand__sub">AI × 新质生产力</span>
+  </a>
+  <nav class="topnav" aria-label="章节导航">
+    <a href="#ch-01" data-ch="01">概念</a>
+    <a href="#ch-02" data-ch="02">规模</a>
+    <a href="#ch-03" data-ch="03">赋能</a>
+    <a href="#ch-04" data-ch="04">要素</a>
+    <a href="#ch-05" data-ch="05">行业</a>
+    <a href="#ch-06" data-ch="06">版图</a>
+    <a href="#ch-07" data-ch="07">全球</a>
+    <a href="#ch-08" data-ch="08">实验室</a>
+    <a href="#ch-09" data-ch="09">边界</a>
+    <a href="#ch-10" data-ch="10">制度</a>
+    <a href="#ch-11" data-ch="11">展望</a>
+  </nav>
+</header>
+
+<!-- ═══════════════ 右侧章节轨道 ═══════════════ -->
+<nav class="rail" aria-label="章节定位">
+  <div class="rail__item is-active" data-target="ch-00"><span class="rail__no">00</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-01"><span class="rail__no">01</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-02"><span class="rail__no">02</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-03"><span class="rail__no">03</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-04"><span class="rail__no">04</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-05"><span class="rail__no">05</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-06"><span class="rail__no">06</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-07"><span class="rail__no">07</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-08"><span class="rail__no">08</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-09"><span class="rail__no">09</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-10"><span class="rail__no">10</span><span class="rail__tick"></span></div>
+  <div class="rail__item" data-target="ch-11"><span class="rail__no">11</span><span class="rail__tick"></span></div>
+</nav>
+
+<main class="page">
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 00 · 首屏
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter chapter--flush" id="ch-00" data-chapter>
+  <div class="hero">
+    <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <div class="hero__tag">
+        <span class="pill pill--solid" style="--pill-c:var(--c-amber)"><i></i>数据可视化专题报告</span>
+        <span class="u-eyebrow">AI AS NEW QUALITY PRODUCTIVE FORCES</span>
+      </div>
+
+      <div class="hero__factors">
+        <span class="t-micro" style="letter-spacing:.18em">AI 正在同时重塑</span>
+        <span class="pill" style="--pill-c:var(--c-amber)"><i></i>劳动者</span>
+        <span class="pill" style="--pill-c:var(--c-azure)"><i></i>劳动资料</span>
+        <span class="pill" style="--pill-c:var(--c-jade)"><i></i>劳动对象</span>
+      </div>
+
+      <h1 class="hero__title t-hero">
+        <span class="u-grad-text">智能跃迁</span>
+        <span class="l2 t-h2" style="color:var(--text-2);font-weight:300;margin-top:18px">当人工智能成为新质生产力</span>
+      </h1>
+
+      <p class="hero__sub t-lede">
+        数据、算力与算法正在重写生产的方程式。人工智能不再只是被使用的工具，
+        它正在渗入<span class="tip" data-tip="新质生产力由技术革命性突破、生产要素创新性配置、产业深度转型升级而催生，以劳动者、劳动资料、劳动对象及其优化组合的跃升为基本内涵。">劳动者、劳动资料与劳动对象</span>本身，
+        改变的不是某一环节的效率，而是整个<span class="tip" data-tip="生产函数描述投入（劳动、资本、技术）与产出之间的关系。AI 同时改变投入的质量与组合方式，因而改变的是函数形式本身。">生产函数的形状</span>。
+      </p>
+
+      <div class="hero__kpis" id="heroKpis"><!-- 由 shell.js 注入 --></div>
+
+      <div class="hero__foot">
+        <span class="scroll-hint"><i></i>向下滚动 · 开始阅读</span>
+        <div class="row" style="gap:18px">
+          <span class="t-micro">数据来源：国家统计局 · 工业和信息化部 · 中国信通院 · 国家网信办 · WIPO · IFR 等</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 01 · 概念解构
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-01" data-chapter>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">01</span>
+        <span class="chapter__kicker">Concept</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">从「要素」到「动能」<br>AI 为何是新质生产力</h2>
+      <p class="chapter__lede t-lede">
+        传统生产力的增长依赖要素投入的叠加——更多的劳动力、更多的资本、更多的土地。
+        新质生产力则来自<span class="tip" data-tip="全要素生产率（Total Factor Productivity）：产出增长中不能被劳动和资本投入增长解释的部分，通常被视为技术进步与效率改善的度量。">全要素生产率</span>的跃升。
+        人工智能的特殊之处在于，它同时改写生产函数的三个自变量。
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <div class="grid">
+        <figure class="panel sp-7 reveal" data-glow="amber">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 01-1</span>
+            <h3 class="panel__title">生产函数的三次改写</h3>
+            <p class="panel__note">拖动下方时间轴，观察 AI 如何依次进入生产函数的三个自变量：从辅助工具，到资本品本身，再到可被加工的要素。</p>
+          </figcaption>
+          <div class="panel__body">
+            <div class="chart chart--m" id="c-eq"></div>
+            <div class="eq__slider">
+              <input type="range" id="eqRange" min="0" max="100" value="12" style="--sim-c:var(--c-amber);--fill:12%">
+              <div class="row row--sb">
+                <span class="t-micro" id="eqLabel">阶段一 · AI 作为辅助工具</span>
+                <span class="t-micro">2017 ————————————— 2025</span>
+              </div>
+            </div>
+          </div>
+          <div class="panel__foot">
+            <span>概念示意 · 依据 <b>《新一代人工智能发展规划》</b>与<b>「人工智能+」行动</b>的政策脉络构建</span>
+            <span>非实测数据</span>
+          </div>
+        </figure>
+
+        <div class="sp-5 stack reveal" data-delay="1">
+          <div class="note-card note-card--amber">
+            <h3 class="t-h3" style="margin-bottom:10px">定义 · 新质生产力</h3>
+            <p class="t-body">
+              由技术革命性突破、生产要素创新性配置、产业深度转型升级而催生的先进生产力质态。
+              它以<b style="color:var(--c-sand);font-weight:600">劳动者、劳动资料、劳动对象及其优化组合的跃升</b>为基本内涵，
+              以全要素生产率大幅提升为核心标志。
+            </p>
+          </div>
+          <div class="note-card">
+            <h3 class="t-h3" style="margin-bottom:10px">AI 的三个「不同」</h3>
+            <ul class="factor__list" style="--factor-c:var(--c-azure)">
+              <li><b>通用目的技术</b><span>像电力与互联网一样，渗透到几乎所有行业的生产流程中。</span></li>
+              <li><b>自我强化</b><span>数据喂养模型、模型产生新数据，形成正反馈的复利效应。</span></li>
+              <li><b>边际成本递减</b><span>一次训练、无限次推理，知识以近乎零边际成本复制。</span></li>
+            </ul>
+          </div>
+          <div class="note-card note-card--jade">
+            <h3 class="t-h3" style="margin-bottom:10px">一条判据</h3>
+            <p class="t-body">
+              如果一项技术只是让原有流程更快，它是<b>改良</b>；
+              如果它改变了投入要素的组合方式与产出的边界，它才是<b style="color:var(--c-jade)">新质生产力</b>。
+              AI 属于后者。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 02 · 规模跃迁
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-02" data-chapter>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">02</span>
+        <span class="chapter__kicker">Scale</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">规模跃迁：<br>一条陡峭的曲线</h2>
+      <p class="chapter__lede t-lede">
+        任何关于生产力的讨论最终都要回到数量。产业规模、算力总量、企业数量、数据体量——
+        四条曲线在过去七年里同时改变了斜率。
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <div class="grid">
+        <figure class="panel sp-12 reveal" data-glow="indigo">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 02-1</span>
+            <h3 class="panel__title">中国人工智能产业规模与同比增速（2020 — 2025）</h3>
+            <p class="panel__note">柱形为产业规模（亿元），折线为同比增速。2024 年起统计口径调整，两段数据以断点分隔，不计算跨口径增速。切换标签可查看算力供给与数据要素。</p>
+          </figcaption>
+          <div class="panel__body">
+            <div class="caliber-note">
+              <b>口径提示</b>
+              <span>2020—2023 年为中国信通院「人工智能核心产业规模」口径；2024 年起调整为「人工智能产业规模」口径，纳入大模型、智能体、具身智能等新增门类。<b>两段数据不可直接比较</b>，图中已用断点标注。</span>
+            </div>
+            <div class="tabs" data-tabs style="margin-bottom:14px;--tab-c:var(--c-indigo)">
+              <button class="tabs__btn is-active" data-pane="scale-a" data-tab-c="#8E8ACB">产业规模 × 企业数量</button>
+              <button class="tabs__btn" data-pane="scale-b" data-tab-c="#7FA8C9">算力规模</button>
+              <button class="tabs__btn" data-pane="scale-c" data-tab-c="#7FB8A4">数据要素与模型</button>
+            </div>
+            <div class="tabpane is-active" id="scale-a"><div class="chart chart--l" id="c-scale-a"></div></div>
+            <div class="tabpane" id="scale-b"><div class="chart chart--l" id="c-scale-b"></div></div>
+            <div class="tabpane" id="scale-c"><div class="chart chart--l" id="c-scale-c"></div></div>
+          </div>
+          <div class="panel__foot" id="scaleSrc"><span>数据来源：<b>中国信息通信研究院</b> · <b>工业和信息化部</b> · <b>国家数据局</b></span><span>单位见坐标轴</span></div>
+        </figure>
+
+        <figure class="panel sp-7 reveal" data-glow="coral">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 02-2</span>
+            <h3 class="panel__title">大模型备案数的阶梯式增长</h3>
+            <p class="panel__note">国家网信办生成式人工智能服务备案批次累计数量，每一级台阶代表一次监管批次的放量。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--s" id="c-models"></div></div>
+          <div class="panel__foot"><span>数据来源：<b>国家互联网信息办公室</b>生成式人工智能服务备案信息</span></div>
+        </figure>
+
+        <figure class="panel sp-5 reveal" data-delay="1" data-glow="jade">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 02-3</span>
+            <h3 class="panel__title">数字经济占 GDP 比重</h3>
+            <p class="panel__note">人工智能是数字经济中增长最快、外溢性最强的部分。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--s" id="c-digital"></div></div>
+          <div class="panel__foot"><span>数据来源：<b>中国信息通信研究院</b>《中国数字经济发展研究报告》</span></div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 03 · 赋能全景（桑基）
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-03" data-chapter>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">03</span>
+        <span class="chapter__kicker">Transmission</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">赋能全景：<br>从算力到产值的传导链</h2>
+      <p class="chapter__lede t-lede">
+        AI 不会凭空产生价值。它需要经历一条完整的传导链：
+        <b style="color:var(--c-azure);font-weight:500">底层要素</b> →
+        <b style="color:var(--c-indigo);font-weight:500">技术能力</b> →
+        <b style="color:var(--c-jade);font-weight:500">行业场景</b> →
+        <b style="color:var(--c-amber);font-weight:500">经济价值</b>。
+        下图把这条链条展开。鼠标悬停任意节点可高亮其完整通路。
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <div class="grid">
+        <figure class="panel sp-12 reveal" data-glow="azure">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 03-1</span>
+            <h3 class="panel__title">人工智能价值传导桑基图</h3>
+            <p class="panel__note">左侧为投入要素，中间两层为技术能力与落地场景，右侧为最终产生的经济价值维度。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart" id="c-sankey" style="height:620px"></div></div>
+          <div class="panel__foot"><span>流量为<b>相对强度示意</b>（依据各行业 AI 应用成熟度与投入规模综合标定）</span><span>点击面板可重置高亮</span></div>
+        </figure>
+
+        <div class="sp-4 reveal" data-delay="1">
+          <div class="note-card note-card--jade" style="height:100%">
+            <span class="panel__no">读图</span>
+            <h3 class="t-h3" style="margin:10px 0 12px">三条值得注意的粗带</h3>
+            <ul class="factor__list" style="--factor-c:var(--c-jade)">
+              <li><b>数据 → 大模型</b><span>数据要素是当前唯一「越用越多」的投入品。</span></li>
+              <li><b>大模型 → 智能制造</b><span>制造业是 AI 落地密度最高、单位价值最实的方向。</span></li>
+              <li><b>机器视觉 → 提质</b><span>质检环节的 AI 替代率最高，直接对应良品率提升。</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sp-8 reveal" data-delay="2">
+          <figure class="panel" data-glow="amber">
+            <figcaption class="panel__cap">
+              <span class="panel__no">图 03-2</span>
+              <h3 class="panel__title">四类经济价值的贡献结构</h3>
+              <p class="panel__note">AI 带来的价值并非单一维度的「降本」，创新与提质往往在中长期占比更高。</p>
+            </figcaption>
+            <div class="panel__body"><div class="chart chart--s" id="c-value"></div></div>
+            <div class="panel__foot"><span>结构为<b>示意性分解</b> · 参考 IDC / 麦肯锡企业调研口径</span></div>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 04 · 三要素
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-04" data-chapter>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">04</span>
+        <span class="chapter__kicker">Factors</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">三要素重塑：<br>劳动者 · 劳动资料 · 劳动对象</h2>
+      <p class="chapter__lede t-lede">
+        新质生产力的跃升，最终落脚在生产三要素的质变上。以下三张卡片，
+        每一条都对应一个可被验证的数字。
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <div class="grid" id="factorCards"><!-- 由 charts 注入 --></div>
+
+      <div class="grid" style="margin-top:26px">
+        <figure class="panel sp-8 reveal" data-glow="indigo">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 04-1</span>
+            <h3 class="panel__title">数字化如何作用于全要素生产率</h3>
+            <p class="panel__note">左：数字经济全要素生产率对经济增长的贡献率（2013 → 2024）。右：数字化投入每提升 1% 对企业成本与利润的传导。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--m" id="c-factor-line"></div></div>
+          <div class="panel__foot"><span>指数由多指标合成 · 构建方法见<a href="sources.html#method" style="color:var(--c-azure)">数据来源页</a></span></div>
+        </figure>
+
+        <figure class="panel sp-4 reveal" data-delay="1" data-glow="lilac">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 04-2</span>
+            <h3 class="panel__title">三要素对全要素生产率的贡献权重</h3>
+            <p class="panel__note">示意性权重分解，用于说明「劳动资料」在短期内贡献最大。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--s" id="c-factor-radar"></div></div>
+          <div class="panel__foot"><span>示意模型</span></div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 05 · 行业深潜
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-05" data-chapter data-tab-scope>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">05</span>
+        <span class="chapter__kicker">Sectors</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">行业深潜：<br>六个被改写的场景</h2>
+      <p class="chapter__lede t-lede">
+        抽象的趋势需要具体的证据。点击下方行业标签，查看每个领域里 AI 到底改变了什么、
+        改变了多少。入选的六个领域，都有一条能被独立核验的硬数据。
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <div class="tabs" data-tabs id="sectorTabs" style="--tab-c:var(--c-coral)"></div>
+      <div id="sectorPanes" style="margin-top:22px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 06 · 中国版图
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-06" data-chapter>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">06</span>
+        <span class="chapter__kicker">Geography</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">中国版图：<br>算力与产业的再分布</h2>
+      <p class="chapter__lede t-lede">
+        AI 的生产力效应在地理上高度不均。东部聚集了大部分算法与企业，
+        西部则以能源优势承接算力。这张地图同时呈现两种流动。
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <div class="grid">
+        <figure class="panel sp-8 reveal" data-glow="jade">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 06-1</span>
+            <h3 class="panel__title">区域竞争力梯队与「东数西算」算力流向</h3>
+            <p class="panel__note">省级 AI 企业数量不存在公开的统一口径全量数据，因此底图采用赛迪顾问与北京大学的区域竞争力梯队划分，呈现相对格局。悬停省份查看所属梯队。</p>
+          </figcaption>
+          <div class="panel__body">
+            <div class="row row--sb" style="margin-bottom:10px">
+              <div class="legend">
+                <span class="legend__i" style="--lg-c:var(--c-coral)"><i></i>竞争力梯队</span>
+                <span class="legend__i" style="--lg-c:var(--c-amber)"><i></i>国家算力枢纽</span>
+                <span class="legend__i" style="--lg-c:var(--c-azure)"><i></i>数据调度流</span>
+              </div>
+              <span class="t-micro">梯队越靠前颜色越亮</span>
+            </div>
+            <div class="chart" id="c-map" style="height:600px"></div>
+          </div>
+          <div class="panel__foot"><span>梯队来源：<b>赛迪顾问</b>《IT 云图 2025》 · <b>北京大学</b>《2023 数字生态指数报告》</span><span>枢纽节点依据<b>「东数西算」</b>工程八大枢纽</span></div>
+        </figure>
+
+        <div class="sp-4 stack reveal" data-delay="1">
+          <figure class="panel" data-glow="azure">
+            <figcaption class="panel__cap">
+              <span class="panel__no">图 06-2</span>
+              <h3 class="panel__title">省域集中度</h3>
+              <p class="panel__note">前五省份合计占全国 AI 产业规模比重，反映产业的极化程度。</p>
+            </figcaption>
+            <div class="panel__body"><div class="chart chart--s" id="c-map-ratio"></div></div>
+          </figure>
+          <figure class="panel" data-glow="coral">
+            <figcaption class="panel__cap">
+              <span class="panel__no">图 06-3</span>
+              <h3 class="panel__title">头部城市排行</h3>
+              <p class="panel__note">城市级 AI 相关企业注册存量（企查查口径）。城市级与省级口径不同，不可混用。</p>
+            </figcaption>
+            <div class="panel__body"><div class="chart chart--m" id="c-map-rank"></div></div>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 07 · 全球坐标
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-07" data-chapter>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">07</span>
+        <span class="chapter__kicker">Global</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">全球坐标：<br>创新要素的国际比较</h2>
+      <p class="chapter__lede t-lede">
+        把视角拉远。专利、论文、算力、机器人密度——这些指标共同决定了一个国家在
+        AI 生产力竞赛中的位置。下方是一个可拖拽旋转的三维点阵地球。
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <div class="grid">
+        <figure class="panel sp-12 reveal" data-glow="indigo">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 07-1</span>
+            <h3 class="panel__title">全球人工智能创新流向（点阵地球）</h3>
+            <p class="panel__note">拖动可旋转，滚轮缩放。亮点为主要创新节点，弧线为其间的技术流动示意。点阵由世界地理轮廓采样生成。</p>
+          </figcaption>
+          <div class="panel__body"><div class="globe-wrap"><canvas id="globeCanvas"></canvas></div></div>
+          <div class="panel__foot"><span>地理轮廓：<b>Natural Earth</b>（经 ECharts map 数据集简化）</span><span>流动为示意</span></div>
+        </figure>
+
+        <figure class="panel sp-6 reveal" data-glow="amber">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 07-2</span>
+            <h3 class="panel__title">生成式 AI 专利的国别结构</h3>
+            <p class="panel__note">WIPO 数据显示中国在生成式 AI 专利申请量上占据绝对多数。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--s" id="c-patent"></div></div>
+          <div class="panel__foot"><span>数据来源：<b>世界知识产权组织（WIPO）</b>专利态势报告</span></div>
+        </figure>
+
+        <figure class="panel sp-6 reveal" data-delay="1" data-glow="jade">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 07-3</span>
+            <h3 class="panel__title">工业机器人密度国际对比</h3>
+            <p class="panel__note">每万名制造业员工拥有的工业机器人台数，是「劳动资料」智能化最直接的度量。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--s" id="c-robot"></div></div>
+          <div class="panel__foot"><span>数据来源：<b>国际机器人联合会（IFR）</b></span></div>
+        </figure>
+
+        <figure class="panel sp-4 reveal" data-glow="azure">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 07-4</span>
+            <h3 class="panel__title">全球 AI 综合能力雷达</h3>
+            <p class="panel__note">六个维度归一化后的相对位置。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--m" id="c-radar-global"></div></div>
+          <div class="panel__foot"><span>归一化处理 · 综合多源</span></div>
+        </figure>
+
+        <figure class="panel sp-8 reveal" data-delay="1" data-glow="coral">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 07-5</span>
+            <h3 class="panel__title">「灯塔工厂」的国别分布</h3>
+            <p class="panel__note">世界经济论坛认定的全球制造业标杆工厂，中国的数量与占比。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--m" id="c-lighthouse"></div></div>
+          <div class="panel__foot"><span>数据来源：<b>世界经济论坛（WEF）</b>全球灯塔工厂网络</span></div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 08 · 实验室
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-08" data-chapter>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">08</span>
+        <span class="chapter__kicker">Simulator</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">生产力实验室：<br>亲手推演一次跃迁</h2>
+      <p class="chapter__lede t-lede">
+        下面是一个简化的生产函数模型。调整四个投入参数，观察全要素生产率、
+        增加值与就业结构如何响应。<b style="color:var(--c-amber);font-weight:500">模型为示意性推演，不代表预测。</b>
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <div class="grid">
+        <figure class="panel sp-4 reveal" data-glow="amber">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 08-1</span>
+            <h3 class="panel__title">投入参数</h3>
+            <p class="panel__note">拖动滑杆，右侧图表实时联动。</p>
+          </figcaption>
+          <div class="panel__body"><div class="sim" id="simControls"></div></div>
+          <div class="panel__foot">
+            <button class="pill" id="simReset" style="--pill-c:var(--c-amber)"><i></i>重置为 2024 基准</button>
+            <button class="pill" id="simMax" style="--pill-c:var(--c-coral)"><i></i>推到极限</button>
+          </div>
+        </figure>
+
+        <div class="sp-8 stack reveal" data-delay="1">
+          <div class="grid grid--tight">
+            <div class="sp-4"><div class="kpi" style="--kpi-c:var(--c-jade)"><span class="kpi__label">全要素生产率指数</span><span class="kpi__val" id="simTfp">100</span><span class="kpi__sub">基准年 = 100</span></div></div>
+            <div class="sp-4"><div class="kpi" style="--kpi-c:var(--c-amber)"><span class="kpi__label">潜在增加值增量</span><span class="kpi__val" id="simGdp">0<small>万亿元</small></span><span class="kpi__sub">相对基准年</span></div></div>
+            <div class="sp-4"><div class="kpi" style="--kpi-c:var(--c-indigo)"><span class="kpi__label">岗位结构调整率</span><span class="kpi__val" id="simJob">0<small>%</small></span><span class="kpi__sub">转岗 + 新增占比</span></div></div>
+          </div>
+          <figure class="panel" data-glow="indigo">
+            <figcaption class="panel__cap">
+              <span class="panel__no">图 08-2</span>
+              <h3 class="panel__title">投入 → 产出的实时响应曲线</h3>
+              <p class="panel__note">横轴为 AI 综合投入强度，纵轴为全要素生产率指数。当前参数位置以标记点显示。</p>
+            </figcaption>
+            <div class="panel__body"><div class="chart chart--m" id="c-sim"></div></div>
+            <div class="panel__foot"><span>模型：<b>Cobb-Douglas 扩展式 + AI 溢出项</b></span><span>示意性推演</span></div>
+          </figure>
+        </div>
+
+        <figure class="panel sp-12 reveal" data-delay="2" data-glow="jade">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 08-3</span>
+            <h3 class="panel__title">就业结构的再配置</h3>
+            <p class="panel__note">AI 并非单向替代，它在削减部分岗位的同时创造出新的岗位类别。拖动上方滑杆观察结构变化。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--m" id="c-sim-job"></div></div>
+          <div class="panel__foot"><span>结构参考 <b>世界经济论坛《未来就业报告》</b>口径</span><span>示意性推演</span></div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 09 · 边界与代价
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-09" data-chapter>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">09</span>
+        <span class="chapter__kicker">Limits</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">边界与代价：<br>跃迁的另一面</h2>
+      <p class="chapter__lede t-lede">
+        任何生产力革命都伴随成本。算力能耗、技能断层、区域鸿沟与模型本身的不确定性，
+        构成了这场跃迁必须支付的账单。诚实地呈现它们，是这份报告的一部分。
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <div class="grid">
+        <figure class="panel sp-7 reveal" data-glow="coral">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 09-1</span>
+            <h3 class="panel__title">岗位的「消失」与「新生」</h3>
+            <p class="panel__note">同一张图上同时呈现被结构性削减的岗位与新增的岗位类别，净效应才是关键。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--m" id="c-jobs"></div></div>
+          <div class="panel__foot"><span>数据来源：<b>世界经济论坛</b>《未来就业报告 2025》· 55 个经济体、22 个行业群、1000+ 雇主</span></div>
+        </figure>
+
+        <figure class="panel sp-5 reveal" data-delay="1" data-glow="amber">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 09-2</span>
+            <h3 class="panel__title">算力的能量账单</h3>
+            <p class="panel__note">数据中心用电量、碳排放，以及电能利用效率（PUE）实际值与政策目标的差距。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--m" id="c-energy"></div></div>
+          <div class="panel__foot"><span>数据来源：<b>中国信通院</b>《绿色算力发展研究报告（2025年）》 · <b>发改环资〔2024〕970 号</b></span></div>
+        </figure>
+
+        <figure class="panel sp-12 reveal" data-delay="2" data-glow="jade">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 09-3</span>
+            <h3 class="panel__title">应用渗透率的落差：大企业 vs 中小企业</h3>
+            <p class="panel__note">不同规模企业的人工智能采用率差距。中国暂无同口径全量公开数据，此处采用欧盟统计局的企业调查。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--m" id="c-gap"></div></div>
+          <div class="panel__foot"><span>数据来源：<b>欧盟统计局 Eurostat</b>《2025 年企业 ICT 使用调查》</span><span>大型企业采用率为小型企业的 3.2 倍</span></div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 10 · 制度供给
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-10" data-chapter>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">10</span>
+        <span class="chapter__kicker">Institution</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">制度供给：<br>政策如何为跃迁铺轨</h2>
+      <p class="chapter__lede t-lede">
+        从 2017 年的顶层规划，到 2023 年的生成式 AI 管理办法，再到「人工智能+」行动——
+        制度供给的节奏，与产业曲线的斜率高度同步。
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <figure class="panel sp-12 reveal" data-glow="lilac">
+        <figcaption class="panel__cap">
+          <span class="panel__no">图 10-1</span>
+          <h3 class="panel__title">人工智能政策演进时间轴（2017 — 2026）</h3>
+          <p class="panel__note">横向可滚动。每一条对应一份对产业产生实质影响的政策文件或行动。</p>
+        </figcaption>
+        <div class="panel__body"><div class="tl" id="policyTl"></div></div>
+        <div class="panel__foot"><span>来源：<b>中国政府网</b> · <b>工业和信息化部</b> · <b>国家网信办</b></span></div>
+      </figure>
+
+      <figure class="panel sp-12 reveal" data-delay="1" data-glow="azure">
+        <figcaption class="panel__cap">
+          <span class="panel__no">图 10-2</span>
+          <h3 class="panel__title">政策密度与产业规模的时间耦合</h3>
+          <p class="panel__note">柱形为当年出台的重点 AI 政策数量，折线为同期核心产业规模。</p>
+        </figcaption>
+        <div class="panel__body"><div class="chart chart--m" id="c-policy"></div></div>
+        <div class="panel__foot"><span>政策计数基于中央级重点文件 · 口径见来源页</span></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CH 11 · 展望
+     ══════════════════════════════════════════════════════════ -->
+<section class="chapter" id="ch-11" data-chapter>
+  <div class="wrap wrap--wide">
+    <header class="chapter__head reveal">
+      <div class="chapter__meta">
+        <span class="chapter__no">11</span>
+        <span class="chapter__kicker">Outlook</span>
+        <span class="chapter__rule"></span>
+      </div>
+      <h2 class="chapter__title t-h2">2030：<br>新质生产力的下一个十年</h2>
+      <p class="chapter__lede t-lede">
+        多家机构对 AI 的长期经济影响给出了量级不同的估算，但方向一致：
+        它对 GDP 的贡献将以「万亿」为单位计量。
+      </p>
+    </header>
+
+    <div class="chapter__grid">
+      <div class="grid">
+        <figure class="panel sp-7 reveal" data-glow="amber">
+          <figcaption class="panel__cap">
+            <span class="panel__no">图 11-1</span>
+            <h3 class="panel__title">2030 年 AI 经济贡献的多机构估算</h3>
+            <p class="panel__note">不同机构的预测口径与基准年不同，此处并列呈现以显示量级区间。</p>
+          </figcaption>
+          <div class="panel__body"><div class="chart chart--m" id="c-outlook"></div></div>
+          <div class="panel__foot"><span>数据来源：<b>PwC</b> · <b>高盛</b> · <b>IDC</b> · <b>麦肯锡</b> · <b>中国信通院</b></span><span>三种口径不可加总</span></div>
+        </figure>
+
+        <div class="sp-5 stack reveal" data-delay="1">
+          <div class="note-card note-card--amber">
+            <span class="panel__no">结论</span>
+            <h3 class="t-h3" style="margin:10px 0 12px">三句话概括这份报告</h3>
+            <ul class="factor__list" style="--factor-c:var(--c-amber)">
+              <li><b>01</b><span>AI 改变的是生产函数本身，而不只是某个环节的效率。</span></li>
+              <li><b>02</b><span>它的作用通过三要素同时发生：更强的人、更聪明的工具、更可加工的对象。</span></li>
+              <li><b>03</b><span>收益并不自动均分。制度、算力与技能的分布，决定了谁能拿到这轮跃迁的红利。</span></li>
+            </ul>
+          </div>
+          <figure class="panel" data-glow="jade">
+            <figcaption class="panel__cap">
+              <span class="panel__no">图 11-2</span>
+              <h3 class="panel__title">增长动能的切换</h3>
+              <p class="panel__note">资本、劳动与全要素生产率对增长的贡献结构之变。</p>
+            </figcaption>
+            <div class="panel__body"><div class="chart chart--s" id="c-growth"></div></div>
+            <div class="panel__foot"><span>示意性结构分解</span></div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="finale reveal">
+        <div class="finale__big u-grad-text">当我们谈论<br>新质生产力</div>
+        <div class="finale__rule"></div>
+        <p class="t-lede" style="max-width:620px;margin:0 auto">
+          我们谈论的不是机器取代人，<br>
+          而是人借助机器，第一次拥有了<br>
+          把「想法」直接转化为「产出」的杠杆。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════ 页脚 ═══════════════ -->
+<footer class="footer">
+  <div class="wrap wrap--wide">
+    <div class="footer__grid">
+      <div>
+        <h2 class="footer__title">智能跃迁<br><span style="color:var(--text-3)">人工智能作为新质生产力</span></h2>
+        <p class="t-body" style="margin-top:18px;max-width:420px">
+          一份由数据驱动的可视化报告。所有图表数据均标注来源，
+          示意性模型已明确标注，未标注来源的数字不出现在本页。
+        </p>
+        <div class="row" style="margin-top:22px">
+          <a class="pill" href="sources.html" style="--pill-c:var(--c-amber)"><i></i>完整数据来源与方法论</a>
+          <a class="pill" href="#ch-00" style="--pill-c:var(--c-azure)"><i></i>回到顶部</a>
+        </div>
+      </div>
+      <div>
+        <span class="u-eyebrow">图表索引</span>
+        <ul class="footer__list t-small" style="margin-top:14px">
+          <li><span>图 01-1 生产函数的三次改写</span><span>交互</span></li>
+          <li><span>图 02-1 产业规模与增速</span><span>3 视图</span></li>
+          <li><span>图 03-1 价值传导桑基图</span><span>交互</span></li>
+          <li><span>图 04-1 数字化与全要素生产率</span><span>双网格</span></li>
+          <li><span>图 05-x 行业深潜</span><span>6 行业</span></li>
+          <li><span>图 06-1 区域梯队与算力流</span><span>地图</span></li>
+          <li><span>图 07-1 全球点阵地球</span><span>Canvas</span></li>
+        </ul>
+      </div>
+      <div>
+        <span class="u-eyebrow">主要数据来源</span>
+        <ul class="footer__list t-small" style="margin-top:14px">
+          <li><span>国家统计局</span><span>宏观</span></li>
+          <li><span>工业和信息化部</span><span>算力</span></li>
+          <li><span>中国信息通信研究院</span><span>产业</span></li>
+          <li><span>国家互联网信息办公室</span><span>模型备案</span></li>
+          <li><span>世界知识产权组织 WIPO</span><span>专利</span></li>
+          <li><span>国际机器人联合会 IFR</span><span>机器人</span></li>
+          <li><span>世界经济论坛 WEF</span><span>就业 / 灯塔</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="t-micro">可视化课程作业 · 数据截至各来源最新公开口径</span>
+      <span class="t-micro">本页不含任何外部跟踪脚本 · 全部资源本地化</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════ 脚本 ═══════════════ -->
+<script src="assets/lib/echarts.min.js"></script>
+<script src="assets/lib/china-map.js"></script>
+<script src="assets/lib/world-map.js"></script>
+<script src="data/site-data.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/hero.js"></script>
+<script src="assets/js/globe.js"></script>
+<script src="assets/js/charts-a.js"></script>
+<script src="assets/js/charts-b.js"></script>
+<script src="assets/js/charts-c.js"></script>
+</body>
+</html>

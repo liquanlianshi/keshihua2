@@ -1,0 +1,505 @@
+{
+  "_meta": {
+    "file": "05-gaps.json",
+    "compiled": "2026-10-09",
+    "compiler": "数据调研员 (web_search / web_fetch 逐条查证)",
+    "policy": "严禁编造。每条均附来源机构 + URL + 年份。查不到的一律 value=null 并在 note 说明。",
+    "caveats": [
+      "所有 URL 均为本次调研中实际检索到／访问过的地址；PDF 类来源（WEF 新闻稿、OECD 报告、IEA 报告）因抓取工具不支持 application/pdf，仅能依据搜索摘要与二次转载，已逐条降级 confidence。",
+      "中国官方口径在 2020 年前后发生过统计口径变更，gap1 的 2018/2019 与 2020 之后不可直接连线。",
+      "gap2 未能获得 31 省完整数据，仅 6 个省级单位有可核实的数值，详见该节 note。"
+    ]
+  },
+
+  "gap1_ai_industry_series": {
+    "note": "口径说明（重要）：① 2018—2019 年官方口径为『人工智能核心产业规模』，数值仅数百亿元，且两年数据出现倒挂（2018 年 686 亿元 > 2019 年 510 亿元），系不同发布机构与统计范围差异所致，本条 confidence 标为『低』，不建议直接连线。② 自 2020 年起中国信通院口径跃升至 3100 亿元以上，2020→2023（3100/4041/5080/5784）为连续可比的信通院序列。③ 2026-08-03 信通院已统一改称『人工智能产业规模』（不再叫『核心产业规模』），并给出 2025 年超 1.2 万亿元、同比 +40%，据此反推 2024 年约 8571 亿元，与信通院自己披露的『2024 年超 9000 亿元』略有出入（9000/5784 = +55.6%，而非用户所述 +24%），口径切换是主因，已在 confidence 中体现。④ 2024、2025 两年原文措辞为『超 9000 亿元』『超 1.2 万亿元』，本表 value 取整取下限（9000 / 12000），实际值为『大于等于』。⑤ 未找到 2018/2019 年的信通院官方数值，故该两年采用工信部／《中国新一代人工智能发展报告》口径。",
+    "unit": "亿元",
+    "points": [
+      {
+        "year": 2018,
+        "value": 686,
+        "source": "《中国新一代人工智能发展报告2019》（新一代人工智能发展规划推进办公室组织编制）/ 经济参考报报道",
+        "url": "https://finance.sina.com.cn/roll/2019-02-28/doc-ihsxncvf8647414.shtml",
+        "confidence": "低"
+      },
+      {
+        "year": 2019,
+        "value": 510,
+        "source": "工业和信息化部（苗圩，2020世界人工智能大会致辞）/ 经济参考报",
+        "url": "https://finance.china.com/tech/13001906/20200710/37239945.html",
+        "confidence": "低"
+      },
+      {
+        "year": 2020,
+        "value": 3100,
+        "source": "中国信息通信研究院（副总工程师王爱华，ICT+深度观察报告会，2020-12-15）",
+        "url": "https://www.chinanews.com/it/2020/12-15/9362951.shtml",
+        "confidence": "中"
+      },
+      {
+        "year": 2021,
+        "value": 4041,
+        "source": "中国信息通信研究院（院长余晓晖，2022世界人工智能大会产业发展全体会议）",
+        "url": "https://www.taibo.cn/p/86296",
+        "confidence": "高"
+      },
+      {
+        "year": 2022,
+        "value": 5080,
+        "source": "中国信息通信研究院（同比 +18%）/ 证券日报、数字中国建设峰会官网转载",
+        "url": "https://www.szzg.gov.cn/2023/szzg/gzdt/202403/t20240305_4786142.htm",
+        "confidence": "高"
+      },
+      {
+        "year": 2023,
+        "value": 5784,
+        "source": "中国信息通信研究院（初步统计，增速 13.9%）/ 证券日报、数字中国建设峰会官网转载",
+        "url": "https://www.szzg.gov.cn/2023/szzg/gzdt/202403/t20240305_4786142.htm",
+        "confidence": "高"
+      },
+      {
+        "year": 2024,
+        "value": 9000,
+        "source": "中国信息通信研究院（『2024年我国人工智能产业规模超9000亿元』，口径已改为『人工智能产业规模』）",
+        "url": "https://www.infoq.cn/article/s4rlgoqkp5fzuzgcbaxh",
+        "confidence": "高"
+      },
+      {
+        "year": 2025,
+        "value": 12000,
+        "source": "中国信息通信研究院（2026-08-03 发布：『2025年我国人工智能产业规模超1.2万亿元，同比增长40%』）",
+        "url": "https://www.zhitongcaijing.com/content/detail/1475436.html",
+        "confidence": "高"
+      }
+    ],
+    "supplementary_facts": [
+      {
+        "claim": "2025 年信通院口径产业内部结构",
+        "value": "基础层规模同比 +59%（占比 38%）、模型框架层 +189%（占比 7%）、应用层 +22%（占比 55%）",
+        "source": "中国信息通信研究院",
+        "url": "https://www.zhitongcaijing.com/content/detail/1475436.html"
+      },
+      {
+        "claim": "截至 2026 年 6 月中国人工智能企业数量",
+        "value": "超 6600 家，全球占比 15%",
+        "source": "中国信息通信研究院",
+        "url": "https://www.zhitongcaijing.com/content/detail/1475436.html"
+      },
+      {
+        "claim": "2020 年上半年人工智能核心产业规模（口径不明，与全年 3100 亿元严重不一致，谨慎使用）",
+        "value": "770 亿元（原文另称『人工智能企业超过260家』，疑为笔误）",
+        "source": "工信部数据，转引自经济观察网",
+        "url": "https://www.eeo.com.cn/2020/1216/446332.shtml"
+      }
+    ]
+  },
+
+  "gap2_province_ai": {
+    "note": "口径与年份（重要）：① 中国官方与商业数据库均以『人工智能相关企业』泛指经营范围涉及 AI 的注册企业（存量、在业/存续），口径远宽于『AI 核心产业企业』，因此绝对数量级很大（185 万—500 万家），不可与欧盟/OECD 的『AI 技术使用率』类指标混用。② 本次调研共找到 4 套可核实的数据集，但【每一套都只公开了前 3—5 名省份的数值】，31 省份（甚至 10 个省份）的完整数值在任何公开可访问来源中均未获得。③ 因此 provinces 数组只包含 6 个有数值的省级单位：广东、江苏、山东、北京、浙江（天眼查专业版，3 个时点）+ 上海（企查查口径的城市数据；上海为直辖市，市域=省域，故可作为省级值使用，但与天眼查口径不可直接比较）。④ 同一省份在不同数据集间差异极大（如广东 2024-09 为 27.16 万家，2026-02 为 77.2 万家），主因是数据库统计口径与收录范围不同，而非真实增长，跨源连线需谨慎。⑤ 定性排序/梯队信息见 qualitative_ranking，可覆盖约 14 个省级单位，但无具体数值。",
+    "metric": "人工智能相关企业数量（注册存量，在业/存续）",
+    "unit": "家",
+    "provinces": [
+      {"name": "广东", "value": 772000, "year": 2026, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "https://m.163.com/dy/article/KLE0BRHQ0519D4UH.html?spss=expand"},
+      {"name": "北京", "value": 401000, "year": 2026, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "https://m.163.com/dy/article/KLE0BRHQ0519D4UH.html?spss=expand"},
+      {"name": "江苏", "value": 385000, "year": 2026, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "https://m.163.com/dy/article/KLE0BRHQ0519D4UH.html?spss=expand"},
+      {"name": "山东", "value": 328000, "year": 2026, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "https://m.163.com/dy/article/KLE0BRHQ0519D4UH.html?spss=expand"},
+      {"name": "浙江", "value": 306000, "year": 2026, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "https://m.163.com/dy/article/KLE0BRHQ0519D4UH.html?spss=expand"},
+
+      {"name": "广东", "value": 666000, "year": 2025, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径，占全国 15.1%）", "source": "天眼查专业版", "url": "http://www.investorscn.com/2025/08/04/122816/"},
+      {"name": "江苏", "value": 346000, "year": 2025, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "http://www.investorscn.com/2025/08/04/122816/"},
+      {"name": "北京", "value": 345000, "year": 2025, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "http://www.investorscn.com/2025/08/04/122816/"},
+      {"name": "山东", "value": 301000, "year": 2025, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "http://www.investorscn.com/2025/08/04/122816/"},
+      {"name": "浙江", "value": 264000, "year": 2025, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "http://www.investorscn.com/2025/08/04/122816/"},
+
+      {"name": "广东", "value": 280000, "year": 2024, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "https://www.thecover.cn/news/O3s4ZgNYPfaH90qSdq8Jkw=="},
+      {"name": "江苏", "value": 140000, "year": 2024, "metric": "人工智能相关企业数量（在业/存续存量，天眼查口径）", "source": "天眼查专业版", "url": "https://www.thecover.cn/news/O3s4ZgNYPfaH90qSdq8Jkw=="},
+      {"name": "山东", "value": 120000, "year": 2024, "metric": "人工智能相关企业数量（原文『超过12万家』，天眼查口径）", "source": "天眼查专业版", "url": "https://www.thecover.cn/news/O3s4ZgNYPfaH90qSdq8Jkw=="},
+      {"name": "北京", "value": 120000, "year": 2024, "metric": "人工智能相关企业数量（原文『超过12万家』，天眼查口径）", "source": "天眼查专业版", "url": "https://www.thecover.cn/news/O3s4ZgNYPfaH90qSdq8Jkw=="},
+      {"name": "浙江", "value": 120000, "year": 2024, "metric": "人工智能相关企业数量（原文『超过12万家』，天眼查口径）", "source": "天眼查专业版", "url": "https://www.thecover.cn/news/O3s4ZgNYPfaH90qSdq8Jkw=="},
+
+      {"name": "广东", "value": 271600, "year": 2024, "metric": "人工智能相关企业数量（企查查口径，截至2024-09-27，原文 27.16 万家）", "source": "企查查 / 中商产业研究院", "url": "https://m.askci.com/news/chanye/20240930/145701272767942108560814.shtml"},
+      {"name": "江苏", "value": 143500, "year": 2024, "metric": "人工智能相关企业数量（企查查口径，截至2024-09-27，原文 14.35 万家）", "source": "企查查 / 中商产业研究院", "url": "https://m.askci.com/news/chanye/20240930/145701272767942108560814.shtml"},
+      {"name": "山东", "value": 139800, "year": 2024, "metric": "人工智能相关企业数量（企查查口径，截至2024-09-27，原文 13.98 万家）", "source": "企查查 / 中商产业研究院", "url": "https://m.askci.com/news/chanye/20240930/145701272767942108560814.shtml"},
+      {"name": "北京", "value": 122500, "year": 2024, "metric": "人工智能相关企业数量（企查查口径，原文为『城市』排名；北京为直辖市，市域=省域，故记作省级值）", "source": "企查查 / 中商产业研究院", "url": "https://m.askci.com/news/chanye/20240930/145701272767942108560814.shtml"},
+      {"name": "上海", "value": 87600, "year": 2024, "metric": "人工智能相关企业数量（企查查口径，原文为『城市』排名；上海为直辖市，市域=省域，故记作省级值）", "source": "企查查 / 中商产业研究院", "url": "https://m.askci.com/news/chanye/20240930/145701272767942108560814.shtml"}
+    ],
+    "national_totals": [
+      {"year": 2024, "value": 1859000, "metric": "全国现存人工智能相关企业（企查查口径，截至2024-09-27）", "source": "企查查 / 中商产业研究院", "url": "https://m.askci.com/news/chanye/20240930/145701272767942108560814.shtml"},
+      {"year": 2024, "value": 1900000, "metric": "全国人工智能相关企业（天眼查口径，2024-12）", "source": "天眼查专业版", "url": "https://www.thecover.cn/news/O3s4ZgNYPfaH90qSdq8Jkw=="},
+      {"year": 2025, "value": 4420000, "metric": "全国现存人工智能相关企业（天眼查口径，2025-08）", "source": "天眼查专业版", "url": "http://www.investorscn.com/2025/08/04/122816/"},
+      {"year": 2026, "value": 5000000, "metric": "全国现存人工智能相关企业（天眼查口径，2026-02）", "source": "天眼查专业版", "url": "https://m.163.com/dy/article/KLE0BRHQ0519D4UH.html?spss=expand"},
+      {"year": 2026, "value": 6600, "metric": "全国人工智能企业数量（信通院『核心产业』窄口径，截至2026-06，全球占比15%）", "source": "中国信息通信研究院", "url": "https://www.zhitongcaijing.com/content/detail/1475436.html"}
+    ],
+    "qualitative_ranking": [
+      {
+        "claim": "省级人工智能产业竞争力梯队（无具体数值）",
+        "value": "引领者梯队：北京、广东、上海、浙江；挑战者梯队：江苏、安徽、山东、湖北、四川、福建（安徽首次超越江苏；浙江首次跻身引领者梯队）",
+        "source": "赛迪顾问《IT云图2025·中国人工智能区域竞争力研究》（2025-06-25）",
+        "url": "https://www.x-techcon.com/article/2034.html",
+        "year": 2024
+      },
+      {
+        "claim": "省级数字生态／AI 发展梯队（无具体数值）",
+        "value": "第一梯队：北京；第二梯队：广东、浙江、上海、江苏；第三梯队：山东、四川、天津、湖北、河南、辽宁、安徽、湖南、重庆",
+        "source": "北京大学《2023数字生态指数报告》",
+        "url": "https://bda.pku.edu.cn/PDF/2023shuzishengtaizhishubaogao.pdf",
+        "year": 2023
+      },
+      {
+        "claim": "人工智能产业规模的省级集中度（规模口径，非企业数量）",
+        "value": "北京、广东、上海、浙江、山东五省份合计占我国人工智能产业规模比重超过 80%",
+        "source": "中国信息通信研究院（2026-08-03）",
+        "url": "https://www.zhitongcaijing.com/content/detail/1475436.html",
+        "year": 2025
+      },
+      {
+        "claim": "城市层面人工智能相关企业数量（企查查口径，2024-09，供参考，不可与省级值混用）",
+        "value": "北京 12.25 万家、深圳 9.91 万家、广州 9.88 万家、上海 8.76 万家",
+        "source": "企查查 / 中商产业研究院",
+        "url": "https://m.askci.com/news/chanye/20240930/145701272767942108560814.shtml",
+        "year": 2024
+      }
+    ],
+    "missing": "未获得数值的省级单位（25个）：天津、河北、山西、内蒙古、辽宁、吉林、黑龙江、安徽、福建、江西、河南、湖北、湖南、广西、海南、重庆、四川、贵州、云南、西藏、陕西、甘肃、青海、宁夏、新疆。原因：公开渠道（天眼查/企查查新闻稿、赛迪顾问、北大数字生态指数、中国新一代人工智能发展战略研究院报告）均只披露前 3—5 名省份的具体数值，完整 31 省数据需付费报告，未查到可公开访问的完整数据集。"
+  },
+
+  "gap3_wef_jobs": {
+    "note": "来源为世界经济论坛《Future of Jobs Report 2025》（2025-01-07 发布，全文 290 页）。WEF 官网与新闻稿 PDF 在本环境下返回 403 或不被支持（application/pdf），故关键数字主要依据 WEF 官方新闻稿标题、WEF 中文站（weforumasia.cn）及多家权威二次转载交叉验证；其中『22%岗位被颠覆』一项为基于原文 1.7 亿/9200 万/7800 万的推导值，非原文直接表述，已单独标注。职业类别清单为『增长最快/下降最快』的定性描述，未能取得完整的 TOP5 排名表。",
+    "facts": [
+      {
+        "claim": "到2030年全球新增岗位数",
+        "value": "1.7亿个（170 million）",
+        "source": "World Economic Forum, Future of Jobs Report 2025",
+        "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+        "date": "2025-01-07",
+        "confidence": "高"
+      },
+      {
+        "claim": "到2030年被替代（流失）岗位数",
+        "value": "9200万个（92 million）",
+        "source": "World Economic Forum, Future of Jobs Report 2025",
+        "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+        "date": "2025-01-07",
+        "confidence": "高"
+      },
+      {
+        "claim": "到2030年净新增岗位数",
+        "value": "7800万个（78 million）",
+        "source": "World Economic Forum 新闻稿：'Future of Jobs Report 2025: 78 Million New Job Opportunities by 2030'",
+        "url": "https://www.weforumasia.cn/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/",
+        "date": "2025-01-07",
+        "confidence": "高"
+      },
+      {
+        "claim": "岗位结构变化：被颠覆岗位占当前就业比重（推导值）",
+        "value": "约 22%（= 新增 1.7 亿 + 流失 9200 万，占当前全球就业总量）；净增 7800 万约相当于当前就业的 7%",
+        "source": "由 WEF Future of Jobs Report 2025 的 1.7亿/9200万/7800万 推导，非报告原文直接表述",
+        "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+        "date": "2025-01-07",
+        "confidence": "中"
+      },
+      {
+        "claim": "技能变化比例：到2030年员工核心技能发生变化/被淘汰的比例",
+        "value": "39%（即约五分之二的现有技能将被重塑或过时；低于 2023 年报告的 44%，为 2016 年以来最低）",
+        "source": "World Economic Forum, Future of Jobs Report 2025（转引自 Outlook Business 报道）",
+        "url": "https://www.outlookbusiness.com/deeptech/artificial-intelligence/is-ai-the-skill-of-future-wef-warns-39-of-current-job-skills-obsolete-by-2030",
+        "date": "2025-01-14",
+        "confidence": "高"
+      },
+      {
+        "claim": "调查覆盖范围",
+        "value": "1000+ 家雇主、55 个经济体、22 个行业集群、覆盖 1400 万+ 员工",
+        "source": "World Economic Forum, Future of Jobs Report 2025（转引自 Outlook Business 报道）",
+        "url": "https://www.outlookbusiness.com/deeptech/artificial-intelligence/is-ai-the-skill-of-future-wef-warns-39-of-current-job-skills-obsolete-by-2030",
+        "date": "2025-01-14",
+        "confidence": "高"
+      },
+      {
+        "claim": "2025—2030 年增长最快的职业类别",
+        "value": "农业工人/农场工人（farmworkers）、配送司机、建筑工人、销售员、食品加工工人；此外护理经济类岗位（护理、社会工作、个人照护）因难以自动化而增长。增长最快的技能方向为 AI、大数据、软件开发和 IT 专业能力。",
+        "source": "World Economic Forum, Future of Jobs Report 2025（转引自 Outlook Business；完整 TOP 排名表未取得）",
+        "url": "https://www.outlookbusiness.com/deeptech/artificial-intelligence/is-ai-the-skill-of-future-wef-warns-39-of-current-job-skills-obsolete-by-2030",
+        "date": "2025-01-14",
+        "confidence": "中"
+      },
+      {
+        "claim": "2025—2030 年下降最快的职业类别",
+        "value": "文书与秘书类岗位降幅最大，典型为行政助理、票务员/售票员、收银员；报告另列有薪酬文员、数据录入员等（完整 TOP 排名表未取得，此三项已由原文表述确认）",
+        "source": "World Economic Forum, Future of Jobs Report 2025（转引自 Outlook Business 报道）",
+        "url": "https://www.outlookbusiness.com/deeptech/artificial-intelligence/is-ai-the-skill-of-future-wef-warns-39-of-current-job-skills-obsolete-by-2030",
+        "date": "2025-01-14",
+        "confidence": "中"
+      },
+      {
+        "claim": "雇主应对 AI 的行为意向",
+        "value": "近一半雇主计划因 AI 调整业务方向；2/3 计划招聘具备 AI 技能的人才；40% 预计会在可被自动化替代的岗位上裁员",
+        "source": "World Economic Forum, Future of Jobs Report 2025（转引自 Outlook Business 报道）",
+        "url": "https://www.outlookbusiness.com/deeptech/artificial-intelligence/is-ai-the-skill-of-future-wef-warns-39-of-current-job-skills-obsolete-by-2030",
+        "date": "2025-01-14",
+        "confidence": "中"
+      }
+    ],
+    "missing": [
+      "增长最快/下降最快职业类别的完整 TOP 排名及百分比（原文 PDF 无法抓取）",
+      "分区域（中国/东亚）的岗位增减细分数据",
+      "『22% 岗位被颠覆』的 WEF 官方原文措辞（本表为推导值）"
+    ]
+  },
+
+  "gap4_gdp_forecast": {
+    "note": "口径差异说明（重要）：本表混合了三种完全不同的口径，不可直接加总或比较——①『GDP 增量/经济影响』（PwC、高盛、IDC）：AI 使 GDP 相比基线增加多少；②『年度经济价值』（麦肯锡）：生成式 AI 每年可释放的经济价值，含消费者剩余与生产率提升，非 GDP 增量；③『产业规模』（中国信通院）：AI 产业自身的营业收入规模，与 GDP 贡献不是同一概念。所有预测均为长期情景测算，不同机构假设差异极大，使用时须标注机构与口径。",
+    "items": [
+      {
+        "org": "PwC（普华永道）",
+        "scope": "全球",
+        "year": 2030,
+        "value": "15.7",
+        "unit": "万亿美元 GDP 增量（相当于全球 GDP 增长 14%）",
+        "source": "PwC, Sizing the Prize（2017-06 发布；转引自中国金融信息网/TechWeb）",
+        "url": "https://www.cnfin.com/world-xh08/a/20170628/1712726.shtml",
+        "year_published": 2017,
+        "confidence": "高"
+      },
+      {
+        "org": "PwC（普华永道）",
+        "scope": "中国",
+        "year": 2030,
+        "value": "7.0",
+        "unit": "万亿美元 GDP 增量（相当于中国 GDP 增长 26.1%，为全球受益最大地区）",
+        "source": "PwC, Sizing the Prize（2017-06 发布；转引自中国金融信息网/TechWeb）",
+        "url": "https://www.cnfin.com/world-xh08/a/20170628/1712726.shtml",
+        "year_published": 2017,
+        "confidence": "高"
+      },
+      {
+        "org": "PwC（普华永道）",
+        "scope": "全球（北美）",
+        "year": 2030,
+        "value": "3.7",
+        "unit": "万亿美元 GDP 增量（相当于北美 GDP 增长 14.5%）",
+        "source": "PwC, Sizing the Prize（2017-06 发布；转引自中国金融信息网/TechWeb）",
+        "url": "https://www.cnfin.com/world-xh08/a/20170628/1712726.shtml",
+        "year_published": 2017,
+        "confidence": "高"
+      },
+      {
+        "org": "高盛（Goldman Sachs Research）",
+        "scope": "全球",
+        "year": 2030,
+        "value": "约 7",
+        "unit": "万亿美元 GDP 增量（生成式 AI 或推动全球 GDP 增长约 7%）",
+        "source": "Goldman Sachs Research（2023 年报告；转引自财联社）",
+        "url": "https://www.cls.cn/detail/1336418",
+        "year_published": 2023,
+        "confidence": "中"
+      },
+      {
+        "org": "IDC",
+        "scope": "全球",
+        "year": 2030,
+        "value": "19.9",
+        "unit": "万亿美元 AI 经济影响（并测算 2030 年全球 GDP 的 3.5% 将来自 AI）",
+        "source": "IDC 市场预测新闻稿",
+        "url": "https://www.idc.com/resource-center/press-releases/idc%e3%81%ae%e5%b8%82%e5%a0%b4%e4%ba%88%e6%b8%ac%ef%bc%9aai%e3%81%af2030%e5%b9%b4%e3%81%be%e3%81%a7%e3%81%ab%e4%b8%96%e7%95%8c%e3%81%ab19-9%e5%85%86%e3%83%89%e3%83%ab%e3%81%ae%e7%b5%8c%e6%b8%88/",
+        "year_published": 2025,
+        "confidence": "中"
+      },
+      {
+        "org": "麦肯锡全球研究院（MGI）",
+        "scope": "中国",
+        "year": 2030,
+        "value": "约 2",
+        "unit": "万亿美元／年 生成式 AI 可释放的经济价值（非 GDP 增量口径）",
+        "source": "McKinsey Global Institute, The economic potential of generative AI（2023）；转引自中时电子报《生成式AI 年挹注陸2兆美元效益》、新浪财经《麦肯锡：中国人工智能雄心，将推动数万亿美元投资》",
+        "url": "https://finance.sina.com.cn/jjxw/2023-11-30/doc-imzwiune5684535.shtml",
+        "year_published": 2023,
+        "confidence": "中"
+      },
+      {
+        "org": "中国信息通信研究院",
+        "scope": "中国",
+        "year": 2025,
+        "value": "1.2",
+        "unit": "万亿元人民币 人工智能产业规模（同比 +40%；此为产业规模口径，非 GDP 贡献；2024 年超 9000 亿元）",
+        "source": "中国信息通信研究院（2026-08-03 发布）",
+        "url": "https://www.zhitongcaijing.com/content/detail/1475436.html",
+        "year_published": 2026,
+        "confidence": "高"
+      }
+    ],
+    "missing": [
+      "麦肯锡中国 2 万亿美元的确切原文措辞与官方 URL（原报告页面未取得，MGI 官网 PDF 不可抓取；仅凭两家中文媒体转述，已降级为『中』）",
+      "高盛报告官方 URL（goldmansachs.com 原文页未取得；依据财联社标题与第三方论文引用交叉验证）",
+      "IDC 该预测的英文原稿与发布日期（仅取得日文新闻稿页；IDC 另有『2030 年 AI 累计为全球 GDP 贡献 19.9 万亿美元』的相近表述，年份为 2025）",
+      "中国信通院关于 AI 对中国 GDP 贡献率的直接量化预测（未查到）"
+    ]
+  },
+
+  "gap5_sme_adoption": {
+    "note": "口径说明（重要）：① 欧盟 Eurostat 口径严谨——统计对象为『雇员 10 人及以上的企业』，指标为『使用了至少一种 AI 技术的企业占比』，分层为小型 10-49 人、中型 50-249 人、大型 250 人及以上；该口径排除 10 人以下微企业，因此『小型企业 17%』并不代表全部中小企业。② 中国口径截然不同——工信部中小企业发展促进中心的调查口径为『AI 技术在中小企业中的普及率』，与欧盟的『企业使用率』不可直接比较。③ 未找到中国官方同一调查中『大型企业 AI 应用率』的对照数值，因此中国部分无法构成严格的大/中小企业对比；欧盟数据可作为该对比的最佳可用证据。",
+    "facts": [
+      {
+        "claim": "欧盟企业 AI 采用率（按企业规模，2025 年）",
+        "value": "大型企业（250+人）55.03%；中型企业（50-249人）30.36%；小型企业（10-49人）17%；全部企业（10+人）19.95%。大型企业与小型企业相差 38.03 个百分点，约 3.2 倍。",
+        "source": "Eurostat, Use of artificial intelligence in enterprises（数据抽取于 2025 年 12 月；数据代码 isoc_eb_ai）",
+        "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Use_of_artificial_intelligence_in_enterprises",
+        "year": 2025,
+        "confidence": "高"
+      },
+      {
+        "claim": "欧盟企业 AI 采用率同比变化（2024→2025）",
+        "value": "全部企业（10+人）由约 13.48% 升至 19.95%，提高 6.47 个百分点",
+        "source": "Eurostat, Use of artificial intelligence in enterprises",
+        "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Use_of_artificial_intelligence_in_enterprises",
+        "year": 2025,
+        "confidence": "高"
+      },
+      {
+        "claim": "欧盟未使用 AI 的企业中『曾考虑使用 AI』的比例（反映意愿差距）",
+        "value": "大型企业 36.54%；中型企业 22.26%；小型企业 12.65%；全部 14.21%",
+        "source": "Eurostat, Use of artificial intelligence in enterprises",
+        "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Use_of_artificial_intelligence_in_enterprises",
+        "year": 2025,
+        "confidence": "高"
+      },
+      {
+        "claim": "欧盟企业 AI 应用深度差距（使用 AI 于 ICT 安全的比例，按规模）",
+        "value": "大型企业 47.51% vs 小型企业 14.51%（差异最大的用途）；用于生产流程：大型 33.46% vs 小型 19.02%",
+        "source": "Eurostat, Use of artificial intelligence in enterprises",
+        "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Use_of_artificial_intelligence_in_enterprises",
+        "year": 2025,
+        "confidence": "高"
+      },
+      {
+        "claim": "中国中小企业 AI 技术普及率（工信部口径）",
+        "value": "AI 技术在中国中小企业的普及率约 40%，尚有 60% 的中小企业未使用过 AI 技术；已应用的 AI 技术中信息安全类约占 15%、计算机视觉约 11%、机器人技术约 10%、智能语音约 9%",
+        "source": "工业和信息化部中小企业发展促进中心、中国中小企业国际合作协会《人工智能创新应用对中小企业发展影响研究报告（2020）》，2020 年 APEC 中小企业工商论坛发布",
+        "url": "https://www.eeo.com.cn/2020/1216/446332.shtml",
+        "year": 2020,
+        "confidence": "中"
+      },
+      {
+        "claim": "OECD：中小企业 AI 采用率系统性低于大企业",
+        "value": "『AI adoption is consistently lower among SMEs than large firms』，且在控制行业结构差异后差距依然存在（原文具体百分比未能读取）",
+        "source": "OECD, AI adoption by small and medium-sized enterprises（2025-12 发布）",
+        "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/12/ai-adoption-by-small-and-medium-sized-enterprises_9c48eae6/426399c1-en.pdf",
+        "year": 2025,
+        "confidence": "中"
+      },
+      {
+        "claim": "中国大型企业上云覆盖率（相关但非 AI 指标，供参考）",
+        "value": "当前中央企业上云覆盖率超过 86%",
+        "source": "中国信息通信研究院《绿色算力发展研究报告（2025年）》",
+        "url": "https://finance.sina.cn/2025-07-29/detail-infiavhc4916151.d.html?vt=4",
+        "year": 2024,
+        "confidence": "中"
+      }
+    ],
+    "missing": [
+      "中国同一调查中『大型企业 AI 应用率』的对照数值（工信部/中国中小企业发展促进中心未公开对照口径）",
+      "工信部或中国信通院近年（2023—2026）更新的中小企业 AI 应用率调查（仅取得 2020 年版本）",
+      "OECD 报告中的具体百分比数值（PDF 不可抓取）",
+      "『中小企业 AI 采用率 4% vs 大企业 50%』这一网传数字，未找到任何权威来源支撑，判定为不可采信，故未写入"
+    ]
+  },
+
+  "gap6_energy": {
+    "note": "口径说明：① 用电量数据来自中国信通院《绿色算力发展研究报告（2025年）》（2025-07 发布），为目前可核实的最新官方口径，统计范围为『数据中心』整体，2024 年数值 1660 亿千瓦时。② 历史序列（2020—2023 年中国数据中心用电量）未找到同口径权威公开数据，故不列。③ 政策目标来自国家发展改革委等四部门《数据中心绿色低碳发展专项行动计划》（发改环资〔2024〕970号）。④ 工信部等六部门《算力基础设施高质量发展行动计划》（2023-10）确实存在且被权威媒体引用，但其『到 2025 年新建数据中心 PUE 低于 1.25』的具体条款原文未能取得，已标注为待核实，未作为独立事实写入数值。⑤ IEA 的 945 TWh 为全球口径，与中国口径不可混用。",
+    "facts": [
+      {
+        "claim": "2024 年中国数据中心用电量及占全社会用电量比重",
+        "value": "1660 亿千瓦时，占全社会用电量的 1.68%",
+        "source": "中国信息通信研究院《绿色算力发展研究报告（2025年）》（2025 绿色算力（人工智能）大会发布，2025-07）",
+        "url": "https://finance.sina.cn/2025-07-29/detail-infiavhc4916151.d.html?vt=4",
+        "year": 2024,
+        "confidence": "高"
+      },
+      {
+        "claim": "2024 年中国数据中心碳排放总量",
+        "value": "0.859 亿吨",
+        "source": "中国信息通信研究院《绿色算力发展研究报告（2025年）》",
+        "url": "https://finance.sina.cn/2025-07-29/detail-infiavhc4916151.d.html?vt=4",
+        "year": 2024,
+        "confidence": "高"
+      },
+      {
+        "claim": "全国数据中心平均 PUE（电能利用效率）与机架规模",
+        "value": "截至 2024 年底，全国在用数据中心机架总规模超过 900 万标准机架，平均 PUE 降至 1.46；超过 140 个算力中心绿色低碳等级达到 4A 级以上",
+        "source": "中国信息通信研究院《绿色算力发展研究报告（2025年）》",
+        "url": "https://finance.sina.cn/2025-07-29/detail-infiavhc4916151.d.html?vt=4",
+        "year": 2024,
+        "confidence": "高"
+      },
+      {
+        "claim": "数据中心绿电利用水平",
+        "value": "部分先进数据中心绿电使用率达到 80% 左右",
+        "source": "中国信息通信研究院《绿色算力发展研究报告（2025年）》",
+        "url": "https://finance.sina.cn/2025-07-29/detail-infiavhc4916151.d.html?vt=4",
+        "year": 2024,
+        "confidence": "高"
+      },
+      {
+        "claim": "算力与存力总规模",
+        "value": "截至 2024 年底，我国算力总规模达到 280 EFlops，存力总规模约 1580 EB，其中先进存储容量占比超过 28%",
+        "source": "中国信息通信研究院《绿色算力发展研究报告（2025年）》",
+        "url": "https://finance.sina.cn/2025-07-29/detail-infiavhc4916151.d.html?vt=4",
+        "year": 2024,
+        "confidence": "高"
+      },
+      {
+        "claim": "政策目标：全国数据中心平均 PUE 与上架率（到 2025 年底）",
+        "value": "全国数据中心布局更加合理，整体上架率不低于 60%，平均电能利用效率（PUE）降至 1.5 以下，可再生能源利用率年均增长 10%",
+        "source": "国家发展改革委、工业和信息化部、国家能源局、国家数据局《数据中心绿色低碳发展专项行动计划》（发改环资〔2024〕970号，2024-07-03）",
+        "url": "https://www.163.com/dy/article/J7U4PQRU0518KCLG.html",
+        "year": 2025,
+        "confidence": "高"
+      },
+      {
+        "claim": "政策目标：新建大型/超大型数据中心及国家枢纽节点 PUE（到 2025 年底）",
+        "value": "新建及改扩建大型和超大型数据中心 PUE 降至 1.25 以内；国家枢纽节点数据中心项目 PUE 不得高于 1.2",
+        "source": "国家发展改革委等四部门《数据中心绿色低碳发展专项行动计划》（发改环资〔2024〕970号）",
+        "url": "https://www.163.com/dy/article/J7U4PQRU0518KCLG.html",
+        "year": 2025,
+        "confidence": "高"
+      },
+      {
+        "claim": "政策目标：国家枢纽节点新建数据中心绿电占比（到 2025 年底）",
+        "value": "算力电力双向协同机制初步形成，国家枢纽节点新建数据中心绿电占比超过 80%",
+        "source": "国家发展改革委等四部门《数据中心绿色低碳发展专项行动计划》（发改环资〔2024〕970号）",
+        "url": "https://www.163.com/dy/article/J7U4PQRU0518KCLG.html",
+        "year": 2025,
+        "confidence": "高"
+      },
+      {
+        "claim": "政策目标：2030 年数据中心能效水平",
+        "value": "到 2030 年底，全国数据中心平均电能利用效率、单位算力能效和碳效达到国际先进水平，可再生能源利用率进一步提升",
+        "source": "国家发展改革委等四部门《数据中心绿色低碳发展专项行动计划》（发改环资〔2024〕970号）",
+        "url": "https://www.163.com/dy/article/J7U4PQRU0518KCLG.html",
+        "year": 2030,
+        "confidence": "高"
+      },
+      {
+        "claim": "全球数据中心电力需求预测（国际对比，口径为全球）",
+        "value": "IEA 预测全球数据中心电力需求到 2030 年将翻倍至约 945 TWh，约相当于当前日本全国用电量",
+        "source": "IEA, Energy and AI（2025）；转引自中国光伏行业协会转载页",
+        "url": "http://www.jspv.org.cn/upload/2026/0116/2025.pdf",
+        "year": 2030,
+        "confidence": "中"
+      },
+      {
+        "claim": "政策背景：数据中心是中国能耗增速较快领域之一",
+        "value": "《数据中心绿色低碳发展专项行动计划》开篇明确定性：『数据中心是支撑新质生产力发展的重要基础设施，也是当前我国能源消耗增速较快的领域之一』",
+        "source": "国家发展改革委等四部门",
+        "url": "https://www.163.com/dy/article/J7U4PQRU0518KCLG.html",
+        "year": 2024,
+        "confidence": "高"
+      }
+    ],
+    "missing": [
+      "2020—2023 年中国数据中心用电量的同口径权威序列（无法与 2024 年 1660 亿千瓦时连线）",
+      "全国数据中心平均 PUE 的历史序列（仅有 2024 年底 1.46 这一时点值）",
+      "工信部等六部门《算力基础设施高质量发展行动计划》（2023-10）中『到 2025 年新建数据中心 PUE 低于 1.25』条款的原文（仅见媒体提及该计划存在，未见条款原文，未写入）",
+      "分省份/分枢纽节点的数据中心用电量与 PUE 数据"
+    ]
+  }
+}
